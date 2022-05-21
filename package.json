@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "parcel": "^2.5.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.7.3"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  }
+}
