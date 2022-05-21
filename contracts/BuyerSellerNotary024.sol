@@ -3,7 +3,7 @@
 pragma solidity ^0.8.13;
 
 // Creating a contract
-contract BuyerSellerNotart024 {
+contract BuyerSellerNotary024 {
     // This justifies the agreement that will be taken between the parties. In this case I am limiting the parties to two but it could be N in the number.
     string agreement024 =
         "This agreement is about purchase of a Microsoft Surface book Pro from the Halifax Shopping Center on June 14, 2022. ";
@@ -53,11 +53,67 @@ contract BuyerSellerNotart024 {
         revert();
     }
 
-    // Defining function to calculate sum of 2 numbers
+    // Defining function submit the agreement onto the main netwwork
     function submitAgreement024() public view returns (uint256) {
-        uint256 num1 = 10;
-        uint256 num2 = 16;
-        uint256 sum = num1 + num2;
-        return sum;
+        // Verify that the msg sender is available in the network and we have access to the msg sender variable
+        if (parties[0] == msg.sender) {
+            return 1;
+        } else {
+            // If message sender is not found we have to revert the transaction.
+            revert();
+        }
+        /*
+        Only valid records can be accesed
+    */
+        bytes memory tempEmptyStringTest = bytes(agreement024);
+        if (hash_agreement024 != 0) {
+            return 1;
+            // Agreement found and is accurate to level of the requirements
+        } else {
+            revert();
+            // No agreement found on the network
+        }
+    }
+
+    function retrieveAgreement024() public view returns (uint256) {
+        if (hash_agreement024 != 0) {
+            return (hash_agreement024);
+        }
+    }
+
+    // Store acknowledgment of this record by the party
+    mapping(address => bool) parties_approvals;
+
+    function approveAgreement024()
+        public
+        view
+        returns (
+            uint256,
+            uint256 recordId,
+            uint256 test_hash
+        )
+    {
+        // Iterate over all parties associated with this record and check for
+        // their approval
+        for (uint256 i = 0; i < parties.length; i++) {
+            if (parties_approvals[parties[i]] == false) {
+                // If one of the parties didn't approve this record, revert
+                revert();
+            }
+        }
+
+        // Compare testing hash with the recorded hash
+        if (test_hash == hash_agreement024) {
+            approveAgreement024();
+        } else {
+            revert();
+        }
+        for (uint256 i = 0; i < parties.length; i++) {
+            if (currentId024 == 0 && data == 0) {
+                // If one of the parties didn't approve this record, revert
+            } else {
+                revert();
+            }
+        }
     }
 }
