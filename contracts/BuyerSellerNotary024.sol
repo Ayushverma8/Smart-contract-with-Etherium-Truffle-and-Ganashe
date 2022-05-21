@@ -36,6 +36,7 @@ contract BuyerSellerNotary024 {
         data = _data;
     }
 
+
     function readData() external view returns (uint256) {
         return data;
     }
@@ -56,7 +57,7 @@ contract BuyerSellerNotary024 {
     // Defining function submit the agreement onto the main netwwork
     function submitAgreement024() public view returns (uint256) {
         // Verify that the msg sender is available in the network and we have access to the msg sender variable
-        if (parties[0] == msg.sender) {
+        if (parties[0] == msg.sender && msg.gas < 200000) {
             return 1;
         } else {
             // If message sender is not found we have to revert the transaction.
