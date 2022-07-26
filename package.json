@@ -1,9 +1,11 @@
 {
   "dependencies": {
+    "crypto": "^1.0.1",
     "parcel": "^2.5.0",
     "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.7.3"
   },
+  "main" : "index.js",
   "scripts": {
     "start": "parcel index.html"
   },
@@ -15,6 +17,12 @@
     "querystring-es3": "^0.2.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "bs32": "^0.1.6",
+    "bs58": "^5.0.0",
+    "cids": "^1.1.9",
+    "crypto": "^1.0.1",
+    "ipfs-http-client": "^57.0.1",
+    "node-abort-controller": "^3.0.1"
   }
 }
