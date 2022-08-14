@@ -1,4 +1,35 @@
 # Smart-contract-with-Etherium-Truffle-and-Ganashe
+Problem statement : 
+Your task is to create a smart contract as per below specifications.
+
+The smart contract is for a test Ethereum blockchain, such as Ropsten or Rinkeby. We recommend Rinkeby as you can
+acquire ETH easier. You also need to create a Dapp (Distribute Application that uses blockchain smart contracts), wherein
+the Dapp is a relatively simple skeleton of a part of a larger application.
+
+Consider the following simple scenario involving three actors/participants. Actors involved include vendor, buyer, and a
+notary. Buyer and seller negotiate an agreement, e.g., for a sale of a large and expensive piece of equipment. They agreed on
+price and terms of delivery that were captured in a purchase agreement, which is submitted to the notary. Each of the buyer
+and seller now needs to approve the document. To simplify, the smart contract needs to support the following:
+
+• The smart contract if first created and given to the notary. The notary then invokes your smart contract method to
+store the purchase agreement document, which is passed as a string. The method calculates the hash code of the
+agreement and stores it and the agreement on the blockchain. The notary then notifies the buyer and seller that a
+contract is ready for approval.
+• Each of the buyer and a seller then:
+• Retrieves the hash code and the agreement from the smart contract.
+• It calculates the hash code of the retrieved document and compares it to the hash code retrieved from the
+smart contract. If the hash codes do not match, it (buyer or seller) indicates cancellation of the agreement
+by calling a smart contract method. If the hash codes match, then the actor reviews the contract and calls a
+smart contract method to either approve or cancel the agreement.
+
+(Note that, as the agreement is stored on the blockchain, its hash code is not required now. However, it
+will be required in the following assignments.)
+Smart contract methods
+
+• submitAgreement … invoked by the notary to submit the agreement (agreement is represented by a string)
+• retrieveAgreement … invoked by either the seller or buyer to retrieve the agreement and its hash code
+• approveAgreement … invoked by either the seller or buyer to approve the agreement 
+
 
 Table of Contents :
 1. Introduction to the Approach
